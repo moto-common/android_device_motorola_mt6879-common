@@ -13,14 +13,13 @@
 # limitations under the License.
 
 # Platform Path
-PLATFORM_COMMON_PATH := device/motorola/sm4250-common
+PLATFORM_COMMON_PATH := device/motorola/mt6768-common
 
 # Platform
-BENGAL := bengal
-TARGET_BOARD_PLATFORM := $(BENGAL)
 TARGET_KERNEL_VERSION := 4.19
 PRODUCT_PLATFORM_MOT := true
-PRODUCT_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := mt6768
+PRODUCT_USES_MTK_HARDWARE := true
 
 # A/B support
 AB_OTA_UPDATER := true
@@ -28,8 +27,8 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 AB_OTA_PARTITIONS += \
     boot \
-    dtbo \
     product \
+    system_ext \
     system \
     vendor \
     vbmeta \
@@ -39,22 +38,23 @@ AB_OTA_PARTITIONS += \
 TARGET_USES_DYNAMIC_PARTITIONS := true
 
 # Fingerprint
+TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_FPC_FINGERPRINT := true
 
 # Gatekeeper
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gatekeeper.disable_spu=true
 
-# Power
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
-# QCOM Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcom.bluetooth.soc=cherokee
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_COMMON_PATH)/rootdir/init.recovery.mt6768.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6768.rc
 
 # Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=10,10
+    ro.telephony.default_network=10,10 \
+    ro.vendor.mtk_protocol1_rat_config=Lf/Lt/W/G
 
 $(call inherit-product, device/motorola/common/common.mk)
-$(call inherit-product, vendor/motorola/sm4250-common/sm4250-common-vendor.mk)
+$(call inherit-product, vendor/motorola/mt6768-common/mt6768-common-vendor.mk)

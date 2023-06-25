@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=sm4250-common
+DEVICE=mt6768-common
 VENDOR=motorola
 
 # Load extract utilities and do some sanity checks.
@@ -65,14 +65,14 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-      system_ext/etc/permissions/moto-telephony.xml)
-           sed -i "s#/system/#/system_ext/#" "${2}"
-           ;;
+        vendor/lib64/libwifi-hal-mtk.so)
+            "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
+            ;;
     esac
 }
 
 # Initialize the helper.
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
+setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" true "${CLEAN_VENDOR}"
 
 extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 

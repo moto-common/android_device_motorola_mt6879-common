@@ -1,0 +1,6 @@
+# Stub, since init.rc imports init.${ro.hardware}.rc,
+# we can't override it, platforms will import both of
+# these rc files as a workaround.
+import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.mtk.rc
+
