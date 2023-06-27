@@ -38,7 +38,4 @@ BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET) --tags_offset $(B
 # Kernel
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 
-# SELinux
-BOARD_USE_ENFORCING_SELINUX := false # STOPSHIP
-
 include device/motorola/common/CommonConfig.mk
