@@ -1,5 +1,3 @@
-# STOPSHIP
-
 # Audio
 vendor/lib/hw/audio.primary.mt6768.so
 vendor/lib/hw/audio.r_submix.mt6768.so
@@ -182,19 +180,6 @@ vendor/etc/AudioLog_dynamic.xml
 vendor/etc/audio_device.xml
 vendor/etc/audio_em.xml
 vendor/etc/aurisys_config.xml
-vendor/etc/bluetooth_offload_audio_policy_configuration.xml
-
-# Bluetooth
-vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
-vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
-vendor/lib/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
-vendor/lib/libbluetooth_mtk.so
-vendor/lib/libbluetooth_mtk_pure.so
-vendor/lib/libbt-vendor.so
-vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
-vendor/lib64/libbluetooth_mtk.so
-vendor/lib64/libbluetooth_mtk_pure.so
-vendor/lib64/libbt-vendor.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
