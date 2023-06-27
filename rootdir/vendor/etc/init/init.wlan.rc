@@ -1,4 +1,0 @@
-on property:wlan.driver.status=ok
-	write /dev/wmtWifi "1"
-on property:wlan.driver.status=unloaded
-	write /dev/wmtWifi "0"
