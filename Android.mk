@@ -1,4 +1,4 @@
-ifeq (mt6768,$(PRODUCT_PLATFORM))
+ifeq (mt6879,$(PRODUCT_PLATFORM))
 
 LOCAL_PATH := $(call my-dir)
 

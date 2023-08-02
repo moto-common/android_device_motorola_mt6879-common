@@ -12,18 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
 # Platform Path
-PLATFORM_COMMON_PATH := device/motorola/mt6768-common
+PLATFORM_COMMON_PATH := device/motorola/mt6879-common
 
 # Platform
-TARGET_KERNEL_VERSION := 4.19
+TARGET_KERNEL_VERSION := 5.10
 PRODUCT_PLATFORM_MOT := true
-TARGET_BOARD_PLATFORM := mt6768
+TARGET_BOARD_PLATFORM := mt6879
 PRODUCT_USES_MTK_HARDWARE := true
 
 # A/B support
 AB_OTA_UPDATER := true
-PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_SHIPPING_API_LEVEL := 30
 
 AB_OTA_PARTITIONS += \
     boot \
@@ -32,29 +34,26 @@ AB_OTA_PARTITIONS += \
     system \
     vendor \
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor_boot
 
 # Dynamic Partitions
 TARGET_USES_DYNAMIC_PARTITIONS := true
 
-# Fingerprint
-TARGET_USES_EGISTEC_FINGERPRINT := true
-TARGET_USES_FPC_FINGERPRINT := true
-
-# Gatekeeper
+# Hardware
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.gatekeeper.disable_spu=true
+    ro.hardware.audio.primary=mediatek
 
+# Power
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
 # Recovery
 PRODUCT_COPY_FILES += \
-    $(PLATFORM_COMMON_PATH)/rootdir/init.recovery.mt6768.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6768.rc
+    $(PLATFORM_COMMON_PATH)/rootdir/init.recovery.mt6879.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6879.rc
 
 # Telephony
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.default_network=10,10 \
-    ro.vendor.mtk_protocol1_rat_config=Lf/Lt/W/G
+    ro.telephony.default_network=10,10
 
 $(call inherit-product, device/motorola/common/common.mk)
-$(call inherit-product, vendor/motorola/mt6768-common/mt6768-common-vendor.mk)
+$(call inherit-product, vendor/motorola/mt6879-common/mt6879-common-vendor.mk)

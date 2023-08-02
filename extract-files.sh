@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=mt6768-common
+DEVICE=mt6879-common
 VENDOR=motorola
 
 # Load extract utilities and do some sanity checks.
@@ -65,6 +65,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib64/hw/audio.primary.mediatek.so)
+            "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
+            ;;
         vendor/lib64/libwifi-hal-mtk.so)
             "${PATCHELF}" --set-soname "libwifi-hal-mtk.so" "${2}"
             ;;
