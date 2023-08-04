@@ -29,12 +29,13 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 
 AB_OTA_PARTITIONS += \
     boot \
+    dtbo \
     product \
     system_ext \
     system \
-    vendor \
     vbmeta \
     vbmeta_system \
+    vendor \
     vendor_boot
 
 # Dynamic Partitions
