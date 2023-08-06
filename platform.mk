@@ -38,6 +38,9 @@ AB_OTA_PARTITIONS += \
     vendor \
     vendor_boot
 
+# Audio
+TARGET_USES_AUDIO_V7_0 := true
+
 # Dynamic Partitions
 TARGET_USES_DYNAMIC_PARTITIONS := true
 
