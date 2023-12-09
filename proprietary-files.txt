@@ -1,4 +1,4 @@
-# Unpinned blobs from tesla_g_vext-user 12 S2ST32.71-118-4 da101 release-keys
+# Unpinned blobs from tesla_g_vext-user 13 T2ST33.105-51-5-3 release-keys
 
 # Audio
 vendor/lib/libMtkAinrEnh.so
@@ -6,7 +6,6 @@ vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_ainr_enh.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_lvacfs.so
-vendor/lib/lib_speech_enh.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
 vendor/lib/libaudiocompensationfilterc.so
@@ -42,7 +41,6 @@ vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/lib_ainr_enh.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_lvacfs.so
-vendor/lib64/lib_speech_enh.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
 vendor/lib64/libaudiocompensationfilterc.so
@@ -59,6 +57,7 @@ vendor/lib64/libaurisysdemo.so
 vendor/lib64/libawinicsmartpaparse.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
+vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/libbwc.so
 vendor/lib64/libcvsd_mtk.so
 vendor/lib64/libladder.so
@@ -74,6 +73,19 @@ vendor/lib64/vendor.mediatek.hardware.audio@6.1.so
 vendor/lib64/vendor.mediatek.hardware.audio@7.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
+
+# Bluetooth
+vendor/bin/hw/android.hardware.bluetooth@1.1-service-mediatek
+vendor/etc/init/android.hardware.bluetooth@1.1-service-mediatek.rc
+vendor/lib/libbluetooth_audio_session_mediatek.so
+vendor/lib/libbluetooth_mtk.so
+vendor/lib/libbluetooth_mtk_pure.so
+vendor/lib/libbt-vendor.so
+vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-mediatek.so
+vendor/lib64/libbluetooth_audio_session_mediatek.so
+vendor/lib64/libbluetooth_mtk.so
+vendor/lib64/libbluetooth_mtk_pure.so
+vendor/lib64/libbt-vendor.so
 
 # Fingerprint
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-ets
