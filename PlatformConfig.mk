@@ -55,3 +55,5 @@ SOONG_CONFIG_NAMESPACES += android_hardware_audio
 SOONG_CONFIG_android_hardware_audio += \
 	run_64bit
 SOONG_CONFIG_android_hardware_audio_run_64bit := true
+
+BOARD_VENDOR_SEPOLICY_DIRS += device/motorola/mt6879-common/sepolicy

@@ -1,0 +1,2 @@
+genfscon sysfs /devices/platform/11e02000.i2c/i2c-6/6-005a/leds/vibrator u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/11e00000.i2c/i2c-0/0-0065/power_supply/cp-standalone u:object_r:sysfs_power_supply:s0
