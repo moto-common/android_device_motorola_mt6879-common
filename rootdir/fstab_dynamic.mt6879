@@ -7,13 +7,14 @@
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879" 2
 # 172 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
 system /system ext4 ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-system_ext /system_ext ext4 ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+
+
 
 vendor /vendor ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
-# 190 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
+# 193 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
 /dev/block/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
 
 /dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption,sysfs_path=/sys/devices/platform/112b0000.ufshci,fsverity
@@ -32,7 +33,7 @@ product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 /dev/block/by-name/tzapp_a /mnt/vendor/tzapp ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
-# 217 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
+# 220 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
 /devices/platform/usb_xhci* auto vfat defaults voldmanaged=usbotg:auto
 /devices/platform/soc/11201000.usb0/11200000.xhci* auto vfat defaults voldmanaged=usbotg:auto
 
@@ -49,7 +50,7 @@ product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 /dev/block/by-name/boot /boot emmc defaults first_stage_mount,nofail,slotselect
-# 241 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
+# 244 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
 /dev/block/by-name/vbmeta_system /vbmeta_system emmc defaults first_stage_mount,nofail,slotselect,avb=vbmeta
 
 /dev/block/by-name/logo /logo emmc defaults defaults
@@ -105,5 +106,4 @@ product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
 
 
 /dev/block/by-name/vbmeta /vbmeta emmc defaults defaults
-
-/dev/block/zram0 none swap defaults zramsize=50%
+/dev/block/zram0 none swap defaults zramsize=70%

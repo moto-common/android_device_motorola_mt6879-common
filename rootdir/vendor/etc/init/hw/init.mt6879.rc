@@ -4,3 +4,14 @@
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.mtk.rc
 
+on boot
+    write /sys/class/i2c-dev/i2c-0/device/0-0038/wireless_fw_update 1
+    # Set wls perms for HAL
+    chown system system /sys/class/power_supply/wireless/device/pen_control
+    chown system system /sys/class/power_supply/wireless/device/tx_mode
+    chown system system /sys/class/power_supply/wireless/device/wls_input_current_limit
+    chown system system /sys/class/power_supply/wireless/device/folio_mode
+    chmod 0660 /sys/class/power_supply/wireless/device/pen_control
+    chmod 0660 /sys/class/power_supply/wireless/device/tx_mode
+    chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
+    chmod 0660 /sys/class/power_supply/wireless/device/folio_mode
