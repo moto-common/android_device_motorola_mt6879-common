@@ -39,6 +39,9 @@ BOARD_RAMDISK_OFFSET := 0x26f00000
 BOARD_DTB_OFFSET := 0x07C80000
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET) --tags_offset $(BOARD_DTB_OFFSET)
 
+# SEPolicy
+BOARD_USE_ENFORCING_SELINUX := true
+
 # USB
 SOONG_CONFIG_MOTO_COMMON_USB_USB_CONTROLLER_NAME := 11201000.usb0
 
@@ -57,3 +60,6 @@ SOONG_CONFIG_android_hardware_audio += \
 SOONG_CONFIG_android_hardware_audio_run_64bit := true
 
 BOARD_VENDOR_SEPOLICY_DIRS += device/motorola/mt6879-common/sepolicy
+
+# VINTF
+DEVICE_MANIFEST_FILE += $(PLATFORM_COMMON_PATH)/vintf/manifest.xml
