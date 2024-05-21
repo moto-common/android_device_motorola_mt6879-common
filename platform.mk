@@ -40,6 +40,9 @@ AB_OTA_PARTITIONS += \
 # Audio
 TARGET_USES_AUDIO_V7_0 := true
 
+# Characteristics
+DEVICE_CHARACTERISTICS += erofs
+
 # Dynamic Partitions
 TARGET_USES_DYNAMIC_PARTITIONS := true
 
