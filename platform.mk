@@ -47,6 +47,10 @@ TARGET_USES_DYNAMIC_PARTITIONS := true
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.audio.primary=mediatek
 
+# Kernel
+TARGET_KERNEL_NO_GCC := false
+TARGET_USES_DTB_FROM_SOURCE := false
+
 # Power
 PRODUCT_USES_PIXEL_POWER_HAL := true
 
