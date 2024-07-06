@@ -15,3 +15,13 @@ on boot
     chmod 0660 /sys/class/power_supply/wireless/device/tx_mode
     chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
     chmod 0660 /sys/class/power_supply/wireless/device/folio_mode
+
+on post-fs-data
+    # Sensors
+    chown system system /sys/devices/virtual/touchscreen/primary/double_tap_enabled
+    chown system system /sys/devices/virtual/touchscreen/primary/double_tap_pressed
+    chown system system /sys/devices/virtual/touchscreen/primary/single_tap_enabled
+    chown system system /sys/devices/virtual/touchscreen/primary/single_tap_pressed
+    chown system system /sys/devices/virtual/touchscreen/primary/udfps_enabled
+    chown system system /sys/devices/virtual/touchscreen/primary/udfps_pressed
+
