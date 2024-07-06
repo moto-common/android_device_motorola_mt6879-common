@@ -6,9 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879" 2
 # 172 "vendor/mediatek/proprietary/hardware/fstab/mt6879/fstab.in.mt6879"
-system /system ext4 ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-vendor /vendor ext4 ro wait,slotselect,avb,logical,first_stage_mount
-product /product ext4 ro wait,slotselect,avb,logical,first_stage_mount
+# TODO: Add ext4 entries
 system /system erofs ro wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
 vendor /vendor erofs ro wait,slotselect,avb,logical,first_stage_mount
 product /product erofs ro wait,slotselect,avb,logical,first_stage_mount
